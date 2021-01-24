@@ -1,5 +1,11 @@
+import matplotlib.pyplot as plt
+import numpy as np
 import pandas as pd
-data = pd.read_csv("netflix_titles.csv")
+tv_shows = pd.read_csv("tv_shows.csv")
 
-# Print the head of the netflix_titles data
-print(data.head())
+print(tv_shows.head(5))
+
+
+# Print the column names of data
+print(tv_shows.columns)
+
