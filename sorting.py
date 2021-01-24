@@ -1,4 +1,2 @@
-# Sort netflix_data by descending release_year
-netflix_data_year = netflix_data.sort_values('release_year',ascending=False)
-
-print(netflix_data_year)
+# Sort tv_shows by individual
+tv_shows_ind = tv_shows.sort_values('individuals')
