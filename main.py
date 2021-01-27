@@ -17,3 +17,4 @@ print(tv_shows.nunique())
 
 print(tv_shows.duplicated().sum())
 
+print("Percentage Missing Data")

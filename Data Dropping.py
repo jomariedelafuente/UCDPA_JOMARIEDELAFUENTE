@@ -11,17 +11,5 @@ tv_shows.dropna(inplace=True)
 
 print(tv_shows.drop)
 
-# Find the shape of an array
-print(tv_shows.shape)
-
 # Print the column names of data
 print(tv_shows.columns)
-
-# Sort tv_shows by year
-tv_shows_year = tv_shows.sort_values('Year',ascending=False)
-
-# Print the top few rows
-print(tv_shows_rotten_tomatoes)
-
-# Sort the index of tv_shows_ind
-tv_shows_srt = tv_shows.sort_index()
