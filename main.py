@@ -1,8 +1,12 @@
-import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
+import matplotlib
+import matplotlib.pyplot as plt
+import seaborn as sns
 
 tv_shows = pd.read_csv("tv_shows.csv")
+
+
 print(tv_shows)
 
 # Find the shape of an array
@@ -17,4 +21,4 @@ print(tv_shows.nunique())
 
 print(tv_shows.duplicated().sum())
 
-print("Percentage Missing Data")
+print(tv_shows.head())
