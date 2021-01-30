@@ -8,9 +8,14 @@ print(tv_shows.columns)
 
 tv_shows.drop(["Unnamed: 0",'type'],axis=1,inplace=True)
 
-tv_shows.dropna(inplace=True)
-
 print(tv_shows.drop)
 
 # Print the column names of data
 print(tv_shows.columns)
+
+print(tv_shows.isnull().any())
+
+
+print(tv_shows.info())
+
+print(tv_shows.describe())

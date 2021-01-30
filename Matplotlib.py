@@ -1,13 +1,25 @@
 import matplotlib.pyplot as plt
-fig,ax = plt.subplots()
-plt.show()
+
 import pandas as pd
 
-tv_shows = pd.read_csv("tv_shows.csv")
+# data set is called = tv_shows
 
-x = data['year'].head(5)
-y1 = data['netflix'].head(5)
-y2 = data['disney'].head(5)
+# Basic plot
+import numpy as np
+import matplotlib.pyplot as plt
 
-ax.plot(x,y1)
-ax.plot(x,y2)
+height = [1931, 1754, 2144, 180, ]
+bars = ('Netflix', 'Hulu', 'Prime Video', 'Disney+')
+y_pos = np.arange(len(bars))
+plt.bar(y_pos, height, color=(0.2, 0.4, 0.6, 0.6))
+
+# use the plt.xticks function to custom labels
+plt.xticks(y_pos, bars, color='orange', rotation=45, fontweight='bold', fontsize='17', horizontalalignment='right')
+
+# remove labels
+plt.tick_params(labelbottom='off')
+
+plt.show()
+
+
+
