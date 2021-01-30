@@ -44,8 +44,6 @@ print(tv_shows_filled)
 # Find how many values were missing in each columns *updated*
 print(tv_shows_filled.isnull().any())
 
-
-
 # Drop Rotten Tomatoes Column
 tv_shows.drop(["Rotten Tomatoes"],axis=1,inplace=True)
 
