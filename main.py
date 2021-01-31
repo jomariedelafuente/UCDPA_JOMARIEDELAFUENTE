@@ -34,24 +34,10 @@ print(tv_shows.isnull().any())
 # Find how many values were missing in each columns
 print(tv_shows.isnull().sum())
 
+
+
+# Find if columns still have missing values
 print(tv_shows.isnull().any())
-
-cols_with_missing = ["Age", "IMDb", "Rotten Tomatoes"]
-# Fill in missing values with 0
-tv_shows_filled = tv_shows.fillna(0)
-print(tv_shows_filled)
-
-# Find how many values were missing in each columns *updated*
-print(tv_shows_filled.isnull().any())
-
-# Drop Rotten Tomatoes Column
-tv_shows.drop(["Rotten Tomatoes"],axis=1,inplace=True)
-
-# Print the new set of columns
-print(tv_shows.columns)
-
-
-print(tv_shows)
 
 # Sort tv_shows by IMDb
 tv_shows_IMDb = tv_shows.sort_values(by="IMDb", ascending=False)
@@ -69,4 +55,10 @@ print(tv_shows_year.head(10))
 
 print(tv_shows.sum())
 
+tv_shows_total = tv_shows.groupby('Age')['Netflix'].sum()
+print(tv_shows_total)
 
+tv_shows_total.plot(kind='bar')
+
+# Show the plot
+plt.show()
