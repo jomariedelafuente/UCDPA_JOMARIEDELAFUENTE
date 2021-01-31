@@ -34,10 +34,13 @@ print(tv_shows.isnull().any())
 # Find how many values were missing in each columns
 print(tv_shows.isnull().sum())
 
+# Remove "Type" column - not relevant
+tv_shows.drop(['Rotten Tomatoes'],axis=1,inplace=True)
 
+print(tv_shows.columns)
 
-# Find if columns still have missing values
-print(tv_shows.isnull().any())
+# Summary of statistics on the dataframe
+print(tv_shows.describe())
 
 # Sort tv_shows by IMDb
 tv_shows_IMDb = tv_shows.sort_values(by="IMDb", ascending=False)
@@ -45,20 +48,25 @@ tv_shows_IMDb = tv_shows.sort_values(by="IMDb", ascending=False)
 # print the top 10 tv show ratings
 print(tv_shows_IMDb.head(10))
 
-print(tv_shows.describe())
-
 # Sort tv_shows by year
 tv_shows_year = tv_shows.sort_values('Year',ascending=True)
 
 # Print the top 10 tv shows
 print(tv_shows_year.head(10))
 
-print(tv_shows.sum())
+# Find total TV shows available on each streaming platform
+tv_shows_sum = tv_shows.sum()["Netflix":"Disney+"]
+print(tv_shows_sum)
 
-tv_shows_total = tv_shows.groupby('Age')['Netflix'].sum()
-print(tv_shows_total)
+# Import matplotlib.pyplot with alias plt
+import matplotlib.pyplot as plt
 
-tv_shows_total.plot(kind='bar')
+# Get the total number of avocados sold on each date
+Netflix_by_year= tv_shows.groupby('Year')
+
+# Create a line plot of the number of avocados sold by date
+Netflix_by_year.plot(kind='line')
+Netflix_by_year.plot(title='Number of TV Shows in Netflix per year')
 
 # Show the plot
 plt.show()
